@@ -1,7 +1,7 @@
 class DummyJson
-  URL = 'https://dummyjson.com/'
-  PRODUCTS_PATH = 'products'
-  AVAILABLE_PRODUCTS = 100
+  URL = 'https://dummyjson.com/'.freeze
+  PRODUCTS_PATH = 'products'.freeze
+  AVAILABLE_PRODUCTS = 100.freeze
 
   class << self
     def products

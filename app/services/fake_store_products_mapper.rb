@@ -12,7 +12,19 @@
 #   }
 # }
 class FakeStoreProductsMapper
-  def map
-
+  def map(api_product)
+    product = Product.new
+    product.external_id = api_product["id"]
+    product.external_api = Product::EXTERNAL_API_FAKE_STORE
+    product.title = api_product["title"]
+    product.description = api_product["description"]
+    product.price = api_product["price"]
+    product.discount_percentage = 0.0
+    product.rating = api_product["rating"]["rate"]
+    product.stock = nil
+    product.brand = nil
+    product.thumbnail = api_product["image"]
+    product.product_images << ProductImage.new(url: api_product["image"])
+    product
   end
 end

@@ -20,7 +20,21 @@
 # }
 
 class DummyJsonProductsMapper
-  def map
+  def map(api_product)
+    product = Product.new
+    product.external_id = api_product["id"]
+    product.external_api = Product::EXTERNAL_API_DUMMY_JSON
+    product.title = api_product["title"]
+    product.description = api_product["description"]
+    product.discount_percentage = api_product["discountPercentage"]
+    product.rating = api_product["rating"]
+    product.stock = api_product["stock"]
+    product.brand = api_product["brand"]
+    product.thumbnail = api_product["thumbnail"]
+    api_product["images"].each do |image_url|
+      product.product_images << ProductImage.new(url: image_url)
+    end
 
+    product
   end
 end
