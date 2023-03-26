@@ -13,7 +13,7 @@ class SyncDummyJsonProductsJob < ApplicationJob
       ).first
       if !existing_product
         product = DummyJsonProductsMapper.map(api_product)
-        product.category = ProductCategory.where(name: api_product["category"]).first_or_create
+        product.product_category = ProductCategory.where(name: api_product["category"]).first_or_create
         product.save
       else
         #TODO: update the existing product

@@ -12,7 +12,8 @@ class SyncFakeStoreProductsJob < ApplicationJob
       ).first
       if !existing_product
         product = FakeStoreProductsMapper.map(api_product)
-        product.category = ProductCategory.where(name: api_product["category"]).first_or_create
+        #TODO: save categories in memory to improve the performance
+        product.product_category = ProductCategory.where(name: api_product["category"]).first_or_create
         product.save
       else
         #TODO: update the existing product
