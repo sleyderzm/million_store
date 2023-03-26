@@ -10,9 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_26_012916) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_26_025725) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "product_categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "product_images", force: :cascade do |t|
+    t.string "url"
+    t.bigint "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_images_on_product_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.float "price"
+    t.float "discount_percentage"
+    t.float "rating"
+    t.integer "stock"
+    t.string "brand"
+    t.bigint "product_category_id", null: false
+    t.string "thumbnail"
+    t.string "external_api"
+    t.string "external_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_category_id"], name: "index_products_on_product_category_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -21,4 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_26_012916) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "product_images", "products"
+  add_foreign_key "products", "product_categories"
 end
