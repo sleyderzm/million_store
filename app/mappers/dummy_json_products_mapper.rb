@@ -26,6 +26,7 @@ class DummyJsonProductsMapper
       product.external_id = api_product["id"]
       product.external_api = Product::EXTERNAL_API_DUMMY_JSON
       product.title = api_product["title"]
+      product.price = api_product["price"]
       product.description = api_product["description"]
       product.discount_percentage = api_product["discountPercentage"]
       product.rating = api_product["rating"]

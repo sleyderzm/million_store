@@ -1,2 +1,10 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="bg-white">
+  <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+    <%= turbo_frame_tag "products-#{@pagy.page}" do %>
+      <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-6">
+        <%= render partial: "product_list_item", collection: @products, as: :product %>
+      </div>
+      <%= turbo_frame_tag "products-#{@pagy.next}", src: pagy_url_for(@pagy, @pagy.next), loading: :lazy if @pagy.next %>
+    <% end %>
+  </div>
+</div>

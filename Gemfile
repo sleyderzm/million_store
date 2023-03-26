@@ -12,6 +12,12 @@ gem "sprockets-rails"
 # Gem to manage environment variables
 gem "figaro"
 
+# Gem to install tailwind for css framework
+gem "tailwindcss-rails"
+
+# Gem to paginate
+gem "pagy"
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 

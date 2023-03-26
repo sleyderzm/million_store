@@ -129,6 +129,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
+    pagy (6.0.2)
     pg (1.4.6)
     public_suffix (5.0.1)
     puma (5.6.5)
@@ -182,6 +183,8 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    tailwindcss-rails (2.0.25-x86_64-linux)
+      railties (>= 6.0.0)
     thor (1.2.1)
     timeout (0.3.2)
     turbo-rails (1.4.0)
@@ -217,12 +220,14 @@ DEPENDENCIES
   figaro
   importmap-rails
   jbuilder
+  pagy
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
   selenium-webdriver
   sprockets-rails
   stimulus-rails
+  tailwindcss-rails
   turbo-rails
   tzinfo-data
   web-console
