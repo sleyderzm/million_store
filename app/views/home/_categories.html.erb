@@ -1,0 +1,6 @@
+<div class="flex justify-center gap-2 flex-wrap p-4">
+  <%= hidden_field_tag "category_id", nil, id: "category_id" %>
+  <% @categories.each do |category| %>
+    <%= button_tag "##{category.name}", data: {controller: "filters", action: 'filters#selectedCategory', category_id: category.id }, class: "button-category-id bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600" %>
+  <% end %>
+</div>

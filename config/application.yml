@@ -12,3 +12,4 @@
 
 APP_DATABASE_URL: postgres://postgres:A1tO2ak6drptIUHUCTvi@millionstore.cflbyystak5c.us-east-2.rds.amazonaws.com:5432/millionstore
 RELOAD_PRODUCTS_AT_HOURS: 1
+APP_URL: http://localhost:3000
