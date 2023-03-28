@@ -18,6 +18,9 @@ gem "tailwindcss-rails"
 # Gem to paginate
 gem "pagy"
 
+# improve the html
+gem "view_component"
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
